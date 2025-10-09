@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Octobug | Blog</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: #27DCE0;
+      color: #0d0109;
+    }
+    header {
+      background: #0d0109;
+      color: #27DCE0;
+      text-align: center;
+      padding: 20px;
+    }
+    header a {
+      color: #27DCE0;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    header a:hover {
+      color: #9C0752;
+    }
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 22px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+    }
+    .post {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      border: 2px solid #090105;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .post:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+    .post h2 {
+      color: #9C0752;
+      margin-bottom: 10px;
+    }
+    .post p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #0d0109;
+      margin-bottom: 10px;
+    }
+    .post a {
+      color: #9C0752;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .post a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 22px;
+      color: #0d0109;
+    }
+    footer a {
+      color: #9C0752;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Octobug's Blog</h1>
+    <p><a href="../index.html">← Back to Home</a></p>
+  </header>
+
+  <main>
+    <article class="post">
+      <h2>Welcome to My Blog</h2>
+      <p>This is the start of my journey documenting web security, full stack development, and ethical hacking insights.</p>
+      <a href="#">Read more →</a>
+    </article>
+
+    <article class="post">
+      <h2>Top 5 Web Security Mistakes</h2>
+      <p>A quick dive into common vulnerabilities I see developers make — and how to fix them effectively.</p>
+      <a href="#">Read more →</a>
+    </article>
+
+    <article class="post">
+      <h2>Behind the Scenes: Building Octobug</h2>
+      <p>A breakdown of the tools, mindset, and challenges I faced while creating this portfolio and brand.</p>
+      <a href="#">Read more →</a>
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2025 Octobug | <a href="https://github.com/octobug1" target="_blank">GitHub</a></p>
+  </footer>
+</body>
+</html>
