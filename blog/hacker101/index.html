@@ -96,9 +96,8 @@
   <main>
     <!-- Example filled Lab 1 -->
     <article class="lab">
-      <h2>Lab 1: <em>Example — The First Flag</em></h2>
-      <p>This was the introductory challenge focusing on basic input validation and directory traversal concepts. The objective was to identify hidden files and extract a flag from an exposed endpoint.</p>
-
+      <h2>Lab 1: <em>A little something to get started (Trivial)</em></h2>
+      <p>This was the introductory challenge, very easy and simple, just to get started with CTF
       <div class="screenshots">
         <img src="images/lab1-1.png" alt="Screenshot 1 placeholder">
         <img src="images/lab1-2.png" alt="Screenshot 2 placeholder">
@@ -107,10 +106,8 @@
       <details>
         <summary>Read full writeup</summary>
         <p>
-          In this challenge, I enumerated the web directory and found an accessible `/backup.zip` file.  
-          After extracting it, I discovered source code that revealed a hidden parameter `?debug=true`,  
-          allowing local file inclusion to read `/flag.txt`.  
-          <br><br><strong>Flag:</strong> `flag{example_flag_here}`
+          In this challenge, to capture the flag, you have to view the source code and you will see a exposed background image in PNG format, navigate to this directory and the FLAG should appear. 
+          
         </p>
       </details>
     </article>
