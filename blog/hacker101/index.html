@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hacker101 Writeups | Octobug</title>
+  <title>Hacker101 CTF Writeups | Octobug</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body {
-      height: 100%;
       font-family: Arial, sans-serif;
       background: #27DCE0;
       color: #0d0109;
+      min-height: 100%;
     }
     header {
       background: #0d0109;
@@ -23,20 +23,67 @@
       text-decoration: none;
       font-weight: bold;
     }
-    header a:hover { color: #9C0752; }
+    header a:hover {
+      color: #9C0752;
+    }
     main {
-      max-width: 850px;
+      max-width: 1100px;
       margin: 40px auto;
       padding: 0 22px;
-      text-align: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
     }
-    h1 {
+    .lab {
+      background: #fff;
+      border: 2px solid #090105;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      padding: 20px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .lab:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+    }
+    .lab h2 {
       color: #9C0752;
-      margin-bottom: 16px;
+      margin-bottom: 10px;
     }
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
+    .lab p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #0d0109;
+      margin-bottom: 10px;
+    }
+    .screenshots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .screenshots img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 8px;
+      border: 1px solid #090105;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+    details {
+      margin-top: 10px;
+      background: #f6f6f6;
+      border-radius: 8px;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+    details summary {
+      cursor: pointer;
+      font-weight: bold;
+      color: #9C0752;
+    }
+    details p {
+      margin-top: 10px;
+      font-size: 0.95rem;
     }
   </style>
 </head>
@@ -47,8 +94,66 @@
   </header>
 
   <main>
-    <p>Welcome to my collection of Hacker101 CTF writeups. Here, I’ll break down each challenge with methodology, screenshots, and payload explanations.  
-    <br><br>Stay tuned — posts coming soon.</p>
+    <!-- Example filled Lab 1 -->
+    <article class="lab">
+      <h2>Lab 1: <em>Example — The First Flag</em></h2>
+      <p>This was the introductory challenge focusing on basic input validation and directory traversal concepts. The objective was to identify hidden files and extract a flag from an exposed endpoint.</p>
+
+      <div class="screenshots">
+        <img src="images/lab1-1.png" alt="Screenshot 1 placeholder">
+        <img src="images/lab1-2.png" alt="Screenshot 2 placeholder">
+      </div>
+
+      <details>
+        <summary>Read full writeup</summary>
+        <p>
+          In this challenge, I enumerated the web directory and found an accessible `/backup.zip` file.  
+          After extracting it, I discovered source code that revealed a hidden parameter `?debug=true`,  
+          allowing local file inclusion to read `/flag.txt`.  
+          <br><br><strong>Flag:</strong> `flag{example_flag_here}`
+        </p>
+      </details>
+    </article>
+
+    <!-- Placeholder Labs -->
+    <article class="lab">
+      <h2>Lab 2: [Title Placeholder]</h2>
+      <p>[Short description placeholder — brief about the challenge concept or target goal.]</p>
+      <div class="screenshots">
+        <img src="images/lab2-1.png" alt="Placeholder Screenshot">
+      </div>
+      <details>
+        <summary>Read full writeup</summary>
+        <p>[Writeup placeholder text]</p>
+      </details>
+    </article>
+
+    <article class="lab">
+      <h2>Lab 3: [Title Placeholder]</h2>
+      <p>[Description placeholder]</p>
+      <details>
+        <summary>Read full writeup</summary>
+        <p>[Writeup placeholder text]</p>
+      </details>
+    </article>
+
+    <article class="lab"><h2>Lab 4: [Title Placeholder]</h2><p>[Description placeholder]</p><details><summary>Read full writeup</summary><p>[Writeup placeholder text]</p></details></article>
+    <article class="lab"><h2>Lab 5: [Title Placeholder]</h2><p>[Description placeholder]</p><details><summary>Read full writeup</summary><p>[Writeup placeholder text]</p></details></article>
+    <article class="lab"><h2>Lab 6: [Title Placeholder]</h2><p>[Description placeholder]</p><details><summary>Read full writeup</summary><p>[Writeup placeholder text]</p></details></article>
+    <article class="lab"><h2>Lab 7: [Title Placeholder]</h2><p>[Description placeholder]</p><details><summary>Read full writeup</summary><p>[Writeup placeholder text]</p></details></article>
+    <article class="lab"><h2>Lab 8: [Title Placeholder]</h2><p>[Description placeholder]</p><details><summary>Read full writeup</summary><p>[Writeup placeholder text]</p></details></article>
+    <article class="lab"><h2>Lab 9: [Title Placeholder]</h2><p>[Description placeholder]</p><details><summary>Read full writeup</summary><p>[Writeup placeholder text]</p></details></article>
+    <article class="lab"><h2>Lab 10: [Title Placeholder]</h2><p>[Description placeholder]</p><details><summary>Read full writeup</summary><p>[Writeup placeholder text]</p></details></article>
+    <article class="lab"><h2>Lab 11: [Title Placeholder]</h2><p>[Description placeholder]</p><details><summary>Read full writeup</summary><p>[Writeup placeholder text]</p></details></article>
+    <article class="lab"><h2>Lab 12: [Title Placeholder]</h2><p>[Description placeholder]</p><details><summary>Read full writeup</summary><p>[Writeup placeholder text]</p></details></article>
+    <article class="lab"><h2>Lab 13: [Title Placeholder]</h2><p>[Description placeholder]</p><details><summary>Read full writeup</summary><p>[Writeup placeholder text]</p></details></article>
+    <article class="lab"><h2>Lab 14: [Title Placeholder]</h2><p>[Description placeholder]</p><details><summary>Read full writeup</summary><p>[Writeup placeholder text]</p></details></article>
+    <article class="lab"><h2>Lab 15: [Title Placeholder]</h2><p>[Description placeholder]</p><details><summary>Read full writeup</summary><p>[Writeup placeholder text]</p></details></article>
+    <article class="lab"><h2>Lab 16: [Title Placeholder]</h2><p>[Description placeholder]</p><details><summary>Read full writeup</summary><p>[Writeup placeholder text]</p></details></article>
+    <article class="lab"><h2>Lab 17: [Title Placeholder]</h2><p>[Description placeholder]</p><details><summary>Read full writeup</summary><p>[Writeup placeholder text]</p></details></article>
+    <article class="lab"><h2>Lab 18: [Title Placeholder]</h2><p>[Description placeholder]</p><details><summary>Read full writeup</summary><p>[Writeup placeholder text]</p></details></article>
+    <article class="lab"><h2>Lab 19: [Title Placeholder]</h2><p>[Description placeholder]</p><details><summary>Read full writeup</summary><p>[Writeup placeholder text]</p></details></article>
+    <article class="lab"><h2>Lab 20: [Title Placeholder]</h2><p>[Description placeholder]</p><details><summary>Read full writeup</summary><p>[Writeup placeholder text]</p></details></article>
   </main>
 </body>
 </html>
