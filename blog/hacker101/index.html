@@ -16,7 +16,7 @@
     <section aria-labelledby="welcome">
       <h2 id="welcome" style="color:#9C0752;">Welcome</h2>
       <p>
-        Welcome to my collection of Hacker101 CTF writeups. Here, I’ll break down each challenge with methodology, screenshots, and payload explanations.
+        Welcome to my collection of Hacker101 CTF writeups. Here, I’ll break down each challenge with methodology, screenshots, and payload explanations. The CTF's get harder along the way!
         </p>
         <br>Stay tuned — more posts coming soon.</br>
       
@@ -26,16 +26,69 @@
       <h2 id="first-ctf" style="color:#9C0752;">First CTF 1/20: A little something to get started</h2>
 
       <p>
-        To solve this lab all you have to do is view the page source and notice a 
+        To solve the first CTF all you have to do is view the page source and notice a 
         <span style="color:#9C0752;">"background.png"</span> being displayed. 
         Once you navigate to the directory of 
         <span style="color:#9C0752;">/background.png</span> 
         the flag will appear.
       </p>
 
+      <img src="firstctf.png" alt="firstctf">
+
       <p style="font-weight:bold; color:#0d0109;">Simple!</p>
     </article>
+
+    <article aria-labelledby="second-ctf" style="margin-top:30px;">
+      <h2 id="second-ctf" style="color:#9C0752;">Second CTF 2/20: Micro CMS V1</h2>
+
+      <p>
+        To solve the second CTF, you will need to capture <span style="color:#9C0752;">4</span> flags in total. 
+        The vulnerabilities that are covered are SQLI, Reflected and Stored XSS and IDOR.
+        <br></br>
+        The first flag is a reflected XSS in the "Title:" input field, the payload is:
+        <br></br>
+        <img src="secondctfreflect.png" alt="secondctfreflect">
+        <p>After saving the page, click on the "Go Home" and the payload will execute since the Title is displayed on the home page</p>
+        <br></br>
+        The second flag is a stored XSS in the edit page functionality, the payload is:
+        <br></br>
+        <img src="secondstored.png" alt="secondstored">
+        <p> After creating your page, visit your page and then click on the button to execute the payload and retrieve the flag</p>
+        <br></br>
+        The third flag is IDOR in the page/edit/ URL. Page 7 is forbidden to access normally when tried with page/7/ however when editing a page it is a different story:
+        <br></br>
+        <img src="secondidor.png" alt="secondidor">
+        <br></br>
+        The fourth flag is a SQLI, append ' to the end of the id parameter for the page and the flag will be shown:
+        <br></br>
+        <img src="secondsqli.png" alt="secondsqli">
+        <br></br>
+        
+      </p>
+
+      
+    </article>
+
+
+    <article aria-labelledby="third-ctf" style="margin-top:30px;">
+      <h2 id="third-ctf" style="color:#9C0752;">Third CTF 3/20: Micro CMS V2</h2>
+
+      <p>
+        
+      </p>
+
+      
+
+      
+    </article>
+
+
+
   </main>
+
+
+
+
 
   
 </body>
