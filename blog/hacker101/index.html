@@ -4,54 +4,142 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hacker101 Writeups | Octobug</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
   <style>
-    /* Base styles */
-    body {
-      background-color: #27DCE0;
-      color: #0d0109;
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #27DCE0, #9C0752);
+      color: #fff;
     }
 
     header {
+      background: rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+      color: #fff;
       text-align: center;
-      background-color: #0d0109;
-      color: #27DCE0;
-      padding: 20px;
+      padding: 30px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    header p {
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 0.3s;
     }
 
     header a {
-      color: #27DCE0;
+      color: #ffe66d;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    header a:hover {
+      color: #fff;
     }
 
     main {
       max-width: 800px;
       margin: 40px auto;
-      text-align: center;
+      padding: 0 22px;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    section, article {
+      background: rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      text-align: left;
+    }
+
+    section:hover, article:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      background: rgba(0,0,0,0.35);
     }
 
     h2 {
-      color: #9C0752;
+      color: #ffe66d;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
     }
 
-    /* Responsive image handling */
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #fff;
+      opacity: 0.95;
+      margin-bottom: 15px;
+    }
+
+    code {
+      background: rgba(0,0,0,0.3);
+      color: #ffe66d;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+    }
+
     img {
       max-width: 100%;
       height: auto;
       border-radius: 8px;
+      margin: 15px 0;
+      border: 1px solid rgba(255,255,255,0.2);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
-    /* Optional: slightly reduce padding for mobile */
-    @media (max-width: 600px) {
-      body {
-        padding: 10px;
+    span {
+      color: #ffe66d;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 400px) {
+      header h1 {
+        font-size: 2rem;
       }
-      main {
-        margin: 20px auto;
+
+      section, article {
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      p {
+        font-size: 0.95rem;
       }
     }
   </style>
@@ -59,37 +147,37 @@
 <body>
 
   <header>
-    <h1>Hacker101 CTF Writeups</h1>
-    <p><a href="../index.html">← Back to Blog</a></p>
+    <h1><i class="fas fa-flag"></i> Hacker101 CTF Writeups</h1>
+    <p><a href="../index.html"><i class="fas fa-arrow-left"></i> Back to Blog</a></p>
   </header>
 
   <main>
     <section aria-labelledby="welcome">
-      <h2 id="welcome">Welcome</h2>
+      <h2 id="welcome"><i class="fas fa-book"></i> Welcome</h2>
       <p>
-        Welcome to my collection of Hacker101 CTF writeups. Here, I’ll break down each challenge with methodology, screenshots, and payload explanations. The CTF's get harder along the way!
+        Welcome to my collection of Hacker101 CTF writeups. Here, I'll break down each challenge with methodology, screenshots, and payload explanations. The CTF's get harder along the way!
       </p>
       <p>Stay tuned — more posts coming soon.</p>
     </section>
 
-    <article aria-labelledby="first-ctf" style="margin-top:30px;">
-      <h2 id="first-ctf">First CTF 1/20: A little something to get started</h2>
+    <article aria-labelledby="first-ctf">
+      <h2 id="first-ctf"><i class="fas fa-play-circle"></i> First CTF 1/20: A little something to get started</h2>
       <p>
         To solve the first CTF all you have to do is view the page source and notice a 
-        <span style="color:#9C0752;">"background.png"</span> being displayed. 
+        <span>"background.png"</span> being displayed. 
         Once you navigate to the directory of 
-        <span style="color:#9C0752;">/background.png</span> 
+        <span>/background.png</span> 
         the flag will appear.
       </p>
       <img src="firstctf.png" alt="firstctf">
-      <p style="font-weight:bold;">Simple!</p>
+      <p style="font-weight: bold; font-style: italic;">Simple!</p>
     </article>
 
-    <article aria-labelledby="second-ctf" style="margin-top:30px;">
-      <h2 id="second-ctf">Second CTF 2/20: Micro CMS V1</h2>
+    <article aria-labelledby="second-ctf">
+      <h2 id="second-ctf"><i class="fas fa-code"></i> Second CTF 2/20: Micro CMS V1</h2>
 
       <p>
-        To solve the second CTF, you will need to capture <span style="color:#9C0752;">4</span> flags in total. 
+        To solve the second CTF, you will need to capture <span>4</span> flags in total. 
         The vulnerabilities that are covered are SQLI, Reflected and Stored XSS and IDOR.
       </p>
 
@@ -108,9 +196,9 @@
       <img src="secondsqli.png" alt="secondsqli">
     </article>
 
-    <article aria-labelledby="third-ctf" style="margin-top:30px;">
-      <h2 id="third-ctf">Third CTF 3/20: Micro CMS V2</h2>
-      <p></p>
+    <article aria-labelledby="third-ctf">
+      <h2 id="third-ctf"><i class="fas fa-shield-alt"></i> Third CTF 3/20: Micro CMS V2</h2>
+      <p>Coming soon...</p>
     </article>
   </main>
 
