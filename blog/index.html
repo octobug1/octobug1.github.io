@@ -4,28 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Octobug | Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     html, body {
       height: 100%;
-      font-family: Arial, sans-serif;
-      background: #27DCE0;
-      color: #0d0109;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #27DCE0, #9C0752);
+      color: #fff;
     }
+
     header {
-      background: #0d0109;
-      color: #27DCE0;
+      background: rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+      color: #fff;
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    header p {
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 0.3s;
+    }
+
     header a {
-      color: #27DCE0;
+      color: #ffe66d;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
+
     header a:hover {
-      color: #9C0752;
+      color: #fff;
     }
+
     main {
       max-width: 900px;
       margin: 40px auto;
@@ -33,68 +64,109 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 22px;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 0.6s;
     }
+
     .post {
-      background: #fff;
+      background: rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
       border-radius: 12px;
       padding: 20px;
-      border: 2px solid #090105;
+      border: 1px solid rgba(255,255,255,0.1);
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
+
     .post:hover {
       transform: translateY(-6px);
       box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      background: rgba(0,0,0,0.35);
     }
+
     .post h2 {
-      color: #9C0752;
+      color: #ffe66d;
       margin-bottom: 10px;
+      font-size: 1.3rem;
     }
+
     .post p {
       font-size: 1rem;
       line-height: 1.5;
-      color: #0d0109;
+      color: #fff;
       margin-bottom: 10px;
+      opacity: 0.95;
     }
+
     .post a {
-      color: #9C0752;
-      font-weight: bold;
+      color: #ffe66d;
+      font-weight: 600;
       text-decoration: none;
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
     }
+
     .post a:hover {
-      text-decoration: underline;
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 400px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .post {
+        padding: 16px;
+      }
+
+      .post h2 {
+        font-size: 1.1rem;
+      }
+
+      .post p {
+        font-size: 0.95rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Octobug's Blog</h1>
-    <p><a href="../index.html">← Back to Home</a></p>
+    <p><a href="../index.html"><i class="fas fa-arrow-left"></i> Back to Home</a></p>
   </header>
 
   <main>
     <article class="post">
-      <h2>Hacker101 CTF Writeups</h2>
+      <h2><i class="fas fa-flag"></i> Hacker101 CTF Writeups</h2>
       <p>Explore detailed walkthroughs of the Hacker101 Capture The Flag challenges. Each post dives deep into the thought process, tools, and techniques used to solve them.</p>
-      <a href="hacker101/">See writeups →</a>
+      <a href="hacker101/">See writeups <i class="fas fa-arrow-right"></i></a>
     </article>
 
     <article class="post">
-      <h2>PortSwigger Web Security Labs</h2>
-      <p>In-depth writeups of PortSwigger’s web security labs. Learn how to identify, exploit, and patch common vulnerabilities using real-world examples and Burp Suite tips.</p>
-      <a href="portswigger/">See writeups →</a>
+      <h2><i class="fas fa-bug"></i> PortSwigger Web Security Labs</h2>
+      <p>In-depth writeups of PortSwigger's web security labs. Learn how to identify, exploit, and patch common vulnerabilities using real-world examples and Burp Suite tips.</p>
+      <a href="portswigger/">See writeups <i class="fas fa-arrow-right"></i></a>
     </article>
 
     <article class="post">
-      <h2>TryHackMe Writeups</h2>
+      <h2><i class="fas fa-graduation-cap"></i> TryHackMe Writeups</h2>
       <p>Step-by-step breakdowns of TryHackMe rooms and challenges. Perfect for anyone learning practical penetration testing, enumeration, and privilege escalation.</p>
-      <a href="tryhackme/">See writeups →</a>
+      <a href="tryhackme/">See writeups <i class="fas fa-arrow-right"></i></a>
     </article>
 
     <article class="post">
-      <h2>Bug Bounty Writeups</h2>
-      <p>Real bug bounty stories and vulnerability reports from programs I’ve participated in. From recon to responsible disclosure — insights into real-world hunting.</p>
-      <a href="bugbounty/">See writeups →</a>
+      <h2><i class="fas fa-star"></i> Bug Bounty Writeups</h2>
+      <p>Real bug bounty stories and vulnerability reports from programs I've participated in. From recon to responsible disclosure — insights into real-world hunting.</p>
+      <a href="bugbounty/">See writeups <i class="fas fa-arrow-right"></i></a>
     </article>
   </main>
 </body>
