@@ -4,33 +4,160 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bug Bounty Writeups | Octobug</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 </head>
-<body style="background-color:#27DCE0; color:#0d0109; font-family:Arial, sans-serif; margin:0; padding:20px;">
+<body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <header style="text-align:center; background-color:#0d0109; color:#27DCE0; padding:20px;">
-    <h1 style="color:#27DCE0; margin-bottom:10px;">Bug Bounty Writeups</h1>
-    <p><a href="../index.html" style="color:#27DCE0; text-decoration:none; font-weight:bold;">← Back to Blog</a></p>
+    html, body {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #27DCE0, #9C0752);
+      color: #fff;
+    }
+
+    header {
+      background: rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      animation: fadeIn 1.5s ease;
+    }
+
+    header p {
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    header a {
+      color: #ffe66d;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    header a:hover {
+      color: #fff;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 22px;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    section, article {
+      background: rgba(0,0,0,0.25);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 30px;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      text-align: left;
+    }
+
+    section:hover, article:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+      background: rgba(0,0,0,0.35);
+    }
+
+    h2 {
+      color: #ffe66d;
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #fff;
+      opacity: 0.95;
+      margin-bottom: 10px;
+    }
+
+    a {
+      color: #ffe66d;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    a:hover {
+      color: #fff;
+      transform: translateX(4px);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 400px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section, article {
+        padding: 20px;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+
+  <header>
+    <h1><i class="fas fa-star"></i> Bug Bounty Writeups</h1>
+    <p><a href="../index.html"><i class="fas fa-arrow-left"></i> Back to Blog</a></p>
   </header>
 
-  <main style="max-width:800px; margin:40px auto; text-align:center;">
+  <main>
     <section aria-labelledby="welcome">
-      <h2 id="welcome" style="color:#9C0752;">Welcome</h2>
+      <h2 id="welcome"><i class="fas fa-handshake"></i> Welcome</h2>
       <p>
         A collection of my bug bounty findings, reports, and lessons learned from real-world bounty programs. Includes methodologies, tools, and disclosure insights.
-        </p>
-        <br>Stay tuned — more posts coming soon.</br>
-     
+      </p>
+      <p style="margin-top: 15px; font-style: italic;">Stay tuned — more posts coming soon.</p>
     </section>
 
-    <article aria-labelledby="first-ctf" style="margin-top:30px;">
-      <h2 id="first-ctf" style="color:#9C0752;">Bounty Number one!</h2>
-
-      
-
-      
+    <article aria-labelledby="first-bounty">
+      <h2 id="first-bounty"><i class="fas fa-trophy"></i> Bounty Number One!</h2>
+      <p>Coming soon...</p>
     </article>
   </main>
-
-  
+</body>
 </body>
 </html>
