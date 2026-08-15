@@ -3,200 +3,427 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Octobug | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Octobug | Freelancer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <style>
     * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  height: 100vh;
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #27DCE0, #9C0752);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  color: #fff;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* Make wrapper take full height and center container */
-.container-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  transform: scale(0.8);
-  transform-origin: center center;
-}
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top, rgba(255, 255, 255, 0.12), transparent 35%),
+        linear-gradient(135deg, #0f0f23 0%, #241b3a 45%, #7c0f4f 100%);
+      color: #f5f5f8;
+      line-height: 1.7;
+    }
 
+    .page {
+      width: min(1200px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0 48px;
+    }
 
-.container {
-  text-align: center;
-  padding: 30px;
-  background: rgba(0,0,0,0.25);
-  backdrop-filter: blur(10px);
-  border-radius: 25px;
-  width: 90%;
-  max-width: 480px; /* slightly smaller than before */
-  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-  animation: fadeIn 1.5s ease;
-}
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 0;
+      margin-bottom: 24px;
+    }
 
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(30px);} 
-  to {opacity: 1; transform: translateY(0);} 
-}
+    .brand {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+    }
 
-.profile-pic {
-  width: 120px; /* smaller image */
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 20px;
-  border: 4px solid rgba(255,255,255,0.9);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-  transform: scale(0);
-  animation: popIn 1s ease forwards;
-}
+    .navigation {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 0.95rem;
+    }
 
-@keyframes popIn {
-  to {transform: scale(1);} 
-}
+    .navigation a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
 
-h1 {
-  font-size: 2.5rem; /* smaller heading */
-  margin-bottom: 12px;
-}
+    .navigation a:hover {
+      color: #fff;
+    }
 
-.highlight-name {
-  color: #ffe66d;
-  text-shadow: 0 0 10px rgba(255,255,255,0.6);
-  transition: 0.3s;
-}
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 40px;
+      align-items: center;
+      padding: 40px 0 56px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
 
-.highlight-name:hover {
-  color: #fff;
-}
+    .hero-copy {
+      max-width: 620px;
+    }
 
-p {
-  font-size: 1.1rem; /* slightly smaller */
-  margin-bottom: 20px;
-  opacity: 0;
-  animation: fadeIn 1.5s ease forwards;
-  animation-delay: 0.5s;
-}
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #8fd2ff;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
 
-.links {
-  display: flex;
-  flex-direction: column;
-  gap: 12px; /* slightly smaller gap */
-  margin-top: 10px;
-  opacity: 0;
-  animation: fadeIn 1.5s ease forwards;
-  animation-delay: 0.8s;
-}
+    .hero-copy h1 {
+      font-size: clamp(2.4rem, 4vw, 3.8rem);
+      line-height: 1.05;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
 
-.links a {
-  text-decoration: none;
-  font-size: 1rem; /* smaller font */
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 16px; /* smaller padding */
-  background: rgba(255,255,255,0.1);
-  border-radius: 12px;
-  transition: 0.25s ease;
-  color: #fff;
-}
+    .hero-copy p {
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+      max-width: 680px;
+      color: #d8d8e5;
+    }
 
-.links a:hover {
-  background: rgba(255,255,255,0.25);
-  transform: translateY(-3px);
-}
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
 
-.particle {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background: rgba(255,255,255,0.7);
-  border-radius: 50%;
-  animation: floatUp linear infinite;
-}
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
 
-@keyframes floatUp {
-  from {transform: translateY(0); opacity: 1;} 
-  to {transform: translateY(-120vh); opacity: 0;} 
-}
+    .button.primary {
+      background: #ff7b59;
+      color: #fff;
+    }
 
-/* Responsive adjustments for very small screens */
-@media (max-width: 400px) {
-  .profile-pic {
-    width: 100px;
-    height: 100px;
-  }
+    .button.secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+    }
 
-  h1 {
-    font-size: 2rem;
-  }
+    .button:hover {
+      transform: translateY(-2px);
+    }
 
-  p {
-    font-size: 1rem;
-  }
+    .hero-panel {
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 26px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+    }
 
-  .links a {
-    font-size: 0.9rem;
-    padding: 6px 12px;
-  }
-}
+    .profile-pic {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
+      border: 4px solid rgba(255,255,255,0.08);
+    }
 
+    section {
+      padding: 56px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+
+    .section-subtitle {
+      margin-bottom: 28px;
+      color: #c4cad8;
+      max-width: 700px;
+    }
+
+    .client-grid,
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 22px;
+      padding: 24px;
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .client-link {
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.15s ease, text-decoration 0.15s ease;
+    }
+
+    .client-link:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .card p {
+      color: #c6c7d0;
+    }
+
+    .card small {
+      color: #8fa0c1;
+    }
+
+    .client-card {
+      position: relative;
+    }
+
+    .client-card::before {
+      content: '★';
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      color: rgba(255, 255, 255, 0.18);
+      font-size: 1.5rem;
+    }
+
+    .service-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .service-card {
+      min-height: 190px;
+    }
+
+    .service-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 32px;
+      align-items: center;
+      padding: 32px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 28px;
+    }
+
+    .contact-panel p {
+      color: #d5d7e5;
+      margin-bottom: 18px;
+    }
+
+    .contact-card {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 22px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      width: fit-content;
+    }
+
+    .contact-card i {
+      font-size: 1.05rem;
+    }
+
+    .site-footer {
+      text-align: center;
+      padding-top: 16px;
+      color: #8891ab;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .client-grid,
+      .service-grid,
+      .contact-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel {
+        margin: 0 auto;
+        max-width: 420px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        width: calc(100% - 20px);
+      }
+
+      .hero {
+        gap: 28px;
+      }
+
+      .hero-panel {
+        padding: 20px;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
-  <div id="particles"></div>
-  <div class="container-wrapper">
-  <div class="container">
-    <img src="images/octopus.png" alt="Octobug Logo" class="profile-pic" />
-    <h1>Hi, I'm <span class="highlight-name">Octobug!</span></h1>
-    <p>A security engineer and full‑stack developer specializing in web security and web development.</p>
+  <div class="page">
+    <header class="site-header">
+      <div class="brand">Octobug</div>
+      <nav class="navigation">
+        <a href="#clients">Clients</a>
+        <a href="#services">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-    <div class="links">
-      <a href="https://github.com/octobug1" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-      <a href="mailto:octobug1@proton.me"><i class="fas fa-envelope"></i> Email</a>
-      <a href="https://t.me/octobug1" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
-      <a href="https://tryhackme.com/p/octobug1" target="_blank"><i class="fas fa-shield-alt"></i> TryHackMe</a>
-      <a href="https://github.com/DarkSyst" target="_blank"><i class="fas fa-building"></i> Company</a>
-    </div>
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow"><i class="fas fa-code"></i> Web development • Pentesting</div>
+          <h1>Freelance web developer and pentester</h1>
+          <p>Hi, I’m Octobug. I build dependable websites and harden them with professional penetration testing so businesses can launch safely and scale with confidence.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="button primary"><i class="fas fa-envelope"></i> Request a quote</a>
+            <a href="#services" class="button secondary"><i class="fas fa-briefcase"></i> View services</a>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <img src="images/octopus.png" alt="Octopus" class="profile-pic" />
+          <div>
+            <p style="margin-top: 24px; color: #e7e9f3; font-size: 0.98rem;">I help founders, startups, and agencies with website builds, security reviews, and ongoing support. Use the client section below as a template for your previous work.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section id="clients">
+        <h2 class="section-title">Clients I’ve worked with</h2>
+        <p class="section-subtitle"></p>
+        <div class="client-grid">
+          <article class="card client-card">
+            <h3><a href="https://sorcery.ie/" class="client-link" target="_blank" rel="noopener">Sorcery IE</a></h3>
+            <p>Website build for business and portfolio</p>
+            <small>Software/Security Services · 1-2 Weeks · Full Stack Developer</small>
+          </article>
+          <article class="card client-card">
+            <h3><a href="https://simplesuppliermanagement.com/" class="client-link" target="_blank" rel="noopener">SSM Teams</a></h3>
+            <p>Penetration Testing services for web assets</p>
+            <small>SaaS · 2 days · Penetration Tester</small>
+          </article>
+          
+        </div>
+      </section>
+
+      <section id="services">
+        <div class="section-header">
+          <h2 class="section-title">Skills & Services</h2>
+          <p class="section-subtitle">I offer a mix of development and security services tailored to websites, SaaS platforms, and online products.</p>
+        </div>
+        <div class="service-grid">
+          <article class="card service-card">
+            <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+            <h3>Web Development</h3>
+            <p>Landing pages, marketing sites, full-stack apps, API integrations, and responsive UI using modern web technologies.</p>
+          </article>
+          <article class="card service-card">
+            <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+            <h3>Penetration Testing</h3>
+            <p>Web app pentests, vulnerability discovery, exploitation validation, and actionable remediation guidance.</p>
+          </article>
+          <article class="card service-card">
+            <div class="service-icon"><i class="fas fa-bolt"></i></div>
+            <h3>Security Hardening</h3>
+            <p>Secure deployment, configuration review, authentication checks, content security, and attack surface reduction.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 class="section-title">Contact me</h2>
+        <p class="section-subtitle">Ready to start a new website, fix security gaps, or get a price estimate? Reach out for enquiries, availability, and pricing details.</p>
+        <div class="contact-panel">
+          <div>
+            <p>For enquiries and pricing, email me directly and I’ll reply with next steps and rates.</p>
+            <p><strong>Available for freelance work, short-term engagements, and security assessments.</strong></p>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+            <a class="contact-card" href="mailto:octobug1@proton.me"><i class="fas fa-envelope"></i> octobug1@proton.me</a>
+            <a class="contact-card" href="https://t.me/octobug1" target="_blank" rel="noopener"><i class="fab fa-telegram"></i> @octobug1</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">Designed for freelance web development and penetration testing.</footer>
   </div>
-</div>
-
-  </div>
-
-  <script>
-    const particles = document.getElementById('particles');
-    const count = 40;
-
-    for (let i = 0; i < count; i++) {
-      const p = document.createElement('div');
-      p.classList.add('particle');
-      const size = Math.random() * 8 + 4;
-      p.style.width = size + 'px';
-      p.style.height = size + 'px';
-      p.style.left = Math.random() * 100 + 'vw';
-      p.style.bottom = '-20px';
-      p.style.animationDuration = (Math.random() * 6 + 4) + 's';
-      particles.appendChild(p);
-    }
-  </script>
 </body>
 </html>
