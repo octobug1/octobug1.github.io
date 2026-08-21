@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS metadata and generated files
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+
+# Thumbnails
+.Thumbs.db
