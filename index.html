@@ -147,6 +147,9 @@
     }
 
     .hero-panel {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
       display: grid;
       place-items: center;
       padding: 24px;
@@ -154,6 +157,70 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 26px;
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+      transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+    }
+
+    .hero-panel::before,
+    .hero-panel::after {
+      content: '';
+      position: absolute;
+      inset: -35%;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .hero-panel::before {
+      background:
+        radial-gradient(ellipse at 25% 25%, rgba(143, 210, 255, 0.38), transparent 28%),
+        radial-gradient(ellipse at 75% 70%, rgba(79, 191, 181, 0.28), transparent 32%);
+      filter: blur(3px);
+      animation: water-drift 7s ease-in-out infinite alternate;
+    }
+
+    .hero-panel::after {
+      background:
+        radial-gradient(circle at 18% 80%, rgba(255, 255, 255, 0.72) 0 4px, transparent 5px),
+        radial-gradient(circle at 42% 90%, rgba(255, 255, 255, 0.55) 0 7px, transparent 8px),
+        radial-gradient(circle at 68% 75%, rgba(255, 255, 255, 0.62) 0 3px, transparent 4px),
+        radial-gradient(circle at 84% 92%, rgba(255, 255, 255, 0.5) 0 5px, transparent 6px);
+      background-size: 170px 220px;
+      filter: blur(0.2px);
+      animation: bubbles-rise 5s linear infinite;
+    }
+
+    .hero-panel:hover,
+    .hero-panel:focus-within {
+      border-color: rgba(143, 210, 255, 0.72);
+      box-shadow: 0 26px 65px rgba(33, 174, 190, 0.3), inset 0 0 45px rgba(143, 210, 255, 0.1);
+      transform: translateY(-3px) scale(1.01);
+    }
+
+    .hero-panel:hover::before,
+    .hero-panel:hover::after,
+    .hero-panel:focus-within::before,
+    .hero-panel:focus-within::after {
+      opacity: 1;
+    }
+
+    @keyframes water-drift {
+      from { transform: translate(-4%, -3%) rotate(-2deg) scale(1); }
+      to { transform: translate(5%, 4%) rotate(3deg) scale(1.08); }
+    }
+
+    @keyframes bubbles-rise {
+      from { background-position: 0 180px; }
+      to { background-position: 22px -80px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-panel,
+      .hero-panel::before,
+      .hero-panel::after {
+        animation: none;
+        transition: none;
+      }
     }
 
     .profile-pic {
