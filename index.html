@@ -331,6 +331,24 @@
       margin-bottom: 18px;
     }
 
+    .secure-email {
+      color: #8fd2ff;
+      text-decoration: underline;
+      text-decoration-color: rgba(143, 210, 255, 0.55);
+      text-underline-offset: 4px;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+
+    .secure-email:hover {
+      color: #ff9477;
+      text-decoration-color: #ff9477;
+    }
+
+    .secure-email:focus-visible {
+      outline: 3px solid #8fd2ff;
+      outline-offset: 4px;
+    }
+
     .contact-actions {
       display: grid;
       grid-template-columns: 1fr;
@@ -482,7 +500,7 @@
         <aside class="hero-panel">
           <img src="images/octopus.png" alt="Octopus" class="profile-pic" />
           <div>
-            <p style="margin-top: 24px; color: #e7e9f3; font-size: 0.98rem;">I help founders, startups, and agencies with website builds, security reviews, and ongoing support.</p>
+            <p style="margin-top: 24px; color: #e7e9f3; font-size: 0.98rem;">I help founders, startups, and agencies with website builds, rigorous security tests, and general support.</p>
           </div>
         </aside>
       </section>
@@ -492,18 +510,23 @@
         <p class="section-subtitle"></p>
         <div class="client-grid">
           <article class="card client-card">
+            <h3><a href="https://hrkgame.com/" class="client-link" target="_blank" rel="noopener">HRKGame <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></h3>
+            <p>Performed in depth penetration test on application surface and generated report.</p>
+            <small>Gaming Marketplace · 3 days · Penetration Tester </small>
+          </article>
+          <article class="card client-card">
             <h3><a href="https://sorcery.ie/" class="client-link" target="_blank" rel="noopener">Sorcery IE <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></h3>
-            <p>Website build for business and portfolio</p>
+            <p>Built website and blog using a bespoke GitHub theme. Used ASCII art to create company logo.</p>
             <small>Software/Security Services · 1-2 Weeks · Full Stack Developer</small>
           </article>
           <article class="card client-card">
             <h3><a href="https://simplesuppliermanagement.com/" class="client-link" target="_blank" rel="noopener">SSM Teams <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></h3>
-            <p>Penetration Testing services for web assets</p>
+            <p>Performed in depth penetration test on application surface and generated report.</p>
             <small>SaaS · 2 days · Penetration Tester</small>
           </article>
           <article class="card client-card">
             <h3><a href="https://allistair.sh/" class="client-link" target="_blank" rel="noopener">Allistair <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a></h3>
-            <p>Penetration Testing services for web portfolio</p>
+            <p>Performed penetration test for portfolio and generated report.</p>
             <small>Portfolio · 1 day(s) · Penetration Tester</small>
           </article>
           
@@ -516,7 +539,7 @@
         <div class="review-grid">
           <article class="card review-card">
             <h3><i class="fas fa-star"></i> Trustpilot</h3>
-            <p>My Trustpilot profile is coming soon. Check back here for client reviews.</p>
+            <p>Check out my client reviews and feedback on Trustpilot.</p>
             <a href="https://www.trustpilot.com/review/octobug.uk" class="review-button" target="_blank" rel="noopener"><i class="fas fa-arrow-up-right-from-square"></i> Visit Trustpilot</a>
           </article>
           <article class="card review-card">
@@ -553,11 +576,11 @@
 
       <section id="contact">
         <h2 class="section-title">Contact me</h2>
-        <p class="section-subtitle">Ready to start a new website, fix security gaps, or get a price estimate? Reach out for enquiries, availability, and pricing details.</p>
+        <p class="section-subtitle">Ready to start a new website, harden your website from hackers, or simply get a price estimate? Reach out below!</p>
         <div class="contact-panel">
           <div>
             <p>For enquiries and pricing, email me directly and I’ll reply with next steps and rates.</p>
-            <p><strong>Available for freelance work, short-term engagements, and security assessments.</strong></p>
+            <p><strong>If you wish to contact us securely: <a class="secure-email" href="mailto:octobug1@proton.me">octobug1@proton.me</a></strong></p>
           </div>
           <div class="contact-actions">
             <a class="contact-card" href="mailto:octobug1@octobug.uk"><i class="fas fa-envelope"></i> octobug1@octobug.uk</a>
